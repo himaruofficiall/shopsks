@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pembayaran | Himaru Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Himaru Shop</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <h2>Form Pembayaran</h2>
+
+<form id="payment-form">
+    <label for="transaction-id">ID Transaksi:</label>
+    <input type="text" id="transaction-id" name="transaction-id" required>
+
+    <label for="name">Nama Kamu Dan Nama Produk</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="whatsapp">WhatsApp:</label>
+    <input type="text" id="whatsapp" name="whatsapp" required>
+    
+   <div class="payment-instruction">
+     <h3>⚠️ Peringatan :</h3>
+     <p>⚠️Ketik Nama Produk Biar Admin Tidak Salah Kirim</p>
+            <p>Silahkan kirim ID transaksi yang benar agar admin bisa mengirimkan link produk yang Anda beli</p>
+            <p>⚠️ Dilarang spam chat di sini, chat ini hanya untuk pembelian produk!</p>
+        </div>
+        
+    <button type="submit">Submit</button>
+</form>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Metode Pembayaran | Himaru Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Himaru Shop</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <h2>Pilih Metode Pembayaran</h2>
+
+        <div class="payment-methods">
+            <button onclick="showPaymentOption('qris')">QRIS</button>
+            <button onclick="showPaymentOption('gopay')">GoPay</button>
+            <button onclick="showPaymentOption('dana')">Dana</button>
+        </div>
+
+        <!-- Instruction Text -->
+        <div class="payment-instruction">
+            <p>Jangan lupa transfer atau bayar terlebih dahulu melalui salah satu metode pembayaran di atas.</p>
+            <p>Setelah pembayaran berhasil, klik tombol di bawah ini untuk melanjutkan proses pengiriman link produk.</p>
+        </div>
+
+        <div class="confirmation">
+            <button onclick="window.location.href='form.html'">Lanjutkan Pembayaran</button>
+        </div>
+    </section>
+
+    <!-- Modal for displaying payment images -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image" alt="Payment Method">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

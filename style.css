@@ -1,0 +1,495 @@
+/* Resetting margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+.navbar {
+    background-color: lightskyblue;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    color: lightskyblue;
+}
+
+@media (max-width: 768px) {
+    .navbar .hamburger {
+        display: block;
+    }
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #1e3d58;
+    }
+    .navbar .nav-links.active {
+        display: flex;
+    }
+    .navbar .nav-links li {
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: linear-gradient(to right, #1e3d58, #133b4c);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 1;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.highlight {
+    color: #f4b400;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.hero-description {
+    font-size: 20px;
+    margin-bottom: 30px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.cta-btn {
+    background-color: #f4b400;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+    background-color: #ff8000;
+    transform: translateY(-5px);
+    animation: bounce 1s infinite;
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: float 6s infinite ease-in-out;
+}
+
+.circle1 {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.circle2 {
+    width: 150px;
+    height: 150px;
+    top: 40%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.circle3 {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* Product Section */
+.product-section {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.product-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Menggunakan CSS Grid untuk dua kolom */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Membuat dua kolom */
+    gap: 20px; /* Jarak antar produk */
+    justify-content: center; /* Menyeimbangkan grid di tengah */
+}
+
+.product {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product h3 {
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.product p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.product .original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+}
+
+.product .discount {
+    color: #e74c3c;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product .final-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e3d58;
+}
+
+.product .buy-now {
+    background-color: lightskyblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product .buy-now:hover {
+    background-color: deepskyblue;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #f0f4f8;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.contact-section h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+
+
+/* Payment Page */
+.payment-section {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.payment-methods button {
+    background-color: #1e3d58;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-methods button:hover {
+    background-color: #133b4c;
+}
+
+.payment-instruction {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.payment-instruction p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Confirmation Button */
+.confirmation button {
+    background-color: #1e3d58;
+    color: white;
+    padding: 14px 20px;
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.confirmation button:hover {
+    background-color: #133b4c;
+}
+
+/* Form Page */
+.form-section {
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    font-size: 24px;
+    color: #1e3d58;
+    margin-bottom: 20px;
+}
+
+.form-section label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-section button {
+    background-color: #1e3d58;
+    color: white;
+    padding: 14px 20px;
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-section button:hover {
+    background-color: #133b4c;
+}
+
+/* Animation from uiverse.io */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.button-animate {
+    animation: bounce 1s ease infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%;
+    }
+}
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%; /* Limit the width */
+    max-height: 80%; /* Limit the height */
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #f4b400;
+}
+
+.product .original-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 14px;
+}
+
+.product .discount {
+    color: #ff4500;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.product .final-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e3d58;
+    margin: 5px 0;
+}
